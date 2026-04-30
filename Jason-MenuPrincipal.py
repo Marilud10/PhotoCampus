@@ -1,43 +1,51 @@
 import json
 
-def cargar_datos():
+ARCHIVO = "servicios.json"
+
+def cargar():
     try:
-        with open("servicios.json", "r") as archivo:
-            return json.load(archivo)
+        with open(ARCHIVO, "r") as f:
+            return json.load(f)
     except:
         return []
 
-def guardar_datos(servicios):
-    with open("servicios.json", "w") as archivo:
-        json.dump(servicios, archivo, indent=4)
+def guardar(servicios):
+    with open(ARCHIVO, "w") as f:
+        json.dump(servicios, f, indent=4)
 
-def mostrar_servicios(servicios):
-    for s in servicios:
-        print(s)
 
 
 def menu():
-    servicios = cargar_datos()
+    servicios = cargar()
 
     while True:
-        print("\n1. Ver servicios")
-        print("2. Agregar servicio")
-        print("3. Editar servicio")
-        print("4. Eliminar servicio")
-        print("5. Salir")
+        print("---------------------------------------")
+        print("\n ---SISTEMA FOTOGRÁFICO---")
+        print("1. Ver catálogo de servicios(Paquetes)")
+        print("2. Buscar servicios por tipo de evento")
+        print("3. Registrar nuevo servicio")
+        print("4. Editar Paquete")
+        print("5. Eliminar servicio")
+        print("6. Salir")
+        print("---------------------------------------")
 
-        opcion = input("Seleccione: ")
 
-        if opcion == "1":
-            mostrar_servicios(servicios)
-        elif opcion == "2":
-            agregar_servicio(servicios)
-        elif opcion == "3":
-            editar_servicio(servicios)
-        elif opcion == "4":
-            eliminar_servicio(servicios)
-        elif opcion == "5":
-            guardar_datos(servicios)
+        op = input("Seleccione una opción: ")
+
+        if op == "1":
+            mostrar(servicios)
+        elif op == "2":
+            buscar_por_tipo(servicios)
+        elif op == "3":
+            agregar(servicios)
+        elif op == "4":
+            editar(servicios)
+        elif op == "5":
+            eliminar(servicios)
+        elif op == "6":
+            print("Saliendo del sistema")
             break
         else:
             print("Opción inválida")
+
+menu()
