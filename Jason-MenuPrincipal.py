@@ -22,11 +22,10 @@ def menu():
         print("---------------------------------------")
         print("\n ---SISTEMA FOTOGRÁFICO---")
         print("1. Ver catálogo de servicios(Paquetes)")
-        print("2. Buscar servicios por tipo de evento")
-        print("3. Registrar nuevo servicio")
-        print("4. Editar Paquete")
-        print("5. Eliminar servicio")
-        print("6. Salir")
+        print("2. Registrar nuevo servicio")
+        print("3. Editar Paquete")
+        print("4. Eliminar servicio")
+        print("5. Salir")
         print("---------------------------------------")
 
 
@@ -35,15 +34,13 @@ def menu():
         if op == "1":
             mostrar(servicios)
         elif op == "2":
-            buscar_por_tipo(servicios)
-        elif op == "3":
             agregar(servicios)
-        elif op == "4":
+        elif op == "3":
             editar(servicios)
-        elif op == "5":
+        elif op == "4":
             eliminar(servicios)
-        elif op == "6":
-            print("Saliendo del sistema")
+        elif op == "5":
+            print("...Estas Saliendo del sistema...")
             break
         else:
             print("Opción inválida")
