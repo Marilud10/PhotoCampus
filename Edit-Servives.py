@@ -4,7 +4,7 @@ def editar(servicios):
 
     for s in servicios:
         if s["nombre"] == nombre:
-            print("\n✏️ Editando servicio")
+            print("\n Editando servicio")
 
             s["nombre"] = input("Nuevo nombre: ")
             s["precio"] = input("Nuevo precio: ")
